@@ -1,7 +1,7 @@
 //initialize an array to store tasks
 let tasks = []
 
-//add an event listener to add tasts to the add tasks btn
+//add an event listener to add tasks to the add tasks btn
 document.getElementById('addTaskBtn').addEventListener('click', function () {
     //storing text value from input box as a variable 'taskInput'
     let taskInput = document.getElementById('taskInput').value
@@ -64,4 +64,31 @@ document.getElementById('clearTaskBtn').addEventListener('click', function (){
 
     //call function to update the task list display
     displayTasks()
+    
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
