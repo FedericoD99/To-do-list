@@ -46,6 +46,8 @@ li.innerHTML = `${task} <button class='btn btn-dark btn-sm' onclick= 'removeTask
 //append the new task to the task list
 taskList.appendChild(li)
     })
+
+    updateTaskCounter()
 }
 
 //function to remove a task from the list when the "√" button is clicked
@@ -65,6 +67,28 @@ document.getElementById('clearTaskBtn').addEventListener('click', function (){
     //call function to update the task list display
     displayTasks()
     
+})
+
+// Feature #1: Allow the "Enter" key to add a task
+document.getElementById('taskInput').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        document.getElementById('addTaskBtn').click()
+    }
+})
+
+// Feature #2: Add a Task Counter
+function updateTaskCounter() {
+    document.getElementById('taskCounter').innerText = `Total Tasks: ${tasks.length}`
+}
+
+
+//Event listener for the "Clear All Tasks" button
+document.getElementById('clearTaskBtn').addEventListener('click', function () {
+    tasks = []
+    //call function to update the task list display
+    displayTasks()
+    // Ensure the counter updates when clearing tasks
+    updateTaskCounter()
 })
 
 
